@@ -123,17 +123,33 @@ export default function WhyChooseUs() {
               className="block h-auto w-full select-none"
             />
 
-            {/* MARCA DE AGUA */}
+            {/* MARCA DE AGUA INSTITUCIONAL */}
 
             <div
-              className="pointer-events-none absolute left-[12%] top-[35%] w-[120px] select-none opacity-[0.09]"
+              className="
+                pointer-events-none
+                absolute
+                left-[12%]
+                top-[35%]
+                z-10
+                w-[120px]
+                select-none
+                opacity-[0.06]
+              "
               aria-hidden="true"
             >
               <img
                 src={solfieLogo}
                 alt=""
                 draggable="false"
-                className="block h-auto w-full select-none"
+                className="
+                  block
+                  h-auto
+                  w-full
+                  select-none
+                  brightness-0
+                  invert
+                "
               />
             </div>
 
@@ -206,7 +222,18 @@ export default function WhyChooseUs() {
                 stiffness: 260,
                 damping: 18,
               }}
-              className="group rounded-3xl border border-gray-200 bg-white p-8 transition-all duration-300 hover:border-[#800000] hover:shadow-2xl"
+              className="
+                group
+                rounded-3xl
+                border
+                border-gray-200
+                bg-white
+                p-8
+                transition-all
+                duration-300
+                hover:border-[#800000]
+                hover:shadow-2xl
+              "
             >
 
               {/* ICONO */}
@@ -263,11 +290,10 @@ export default function WhyChooseUs() {
 
 
       {/* ============================= */}
-      {/* MISIÓN / VISIÓN / VALORES */}
+      {/* MENSAJE DEL SOCIO FUNDADOR */}
       {/* ============================= */}
 
-      <div className="mt-20 grid items-start gap-10 lg:grid-cols-5">
-
+      <div className="mt-20 grid items-center gap-10 lg:grid-cols-5">
 
         {/* ============================= */}
         {/* FOTO DEL DIRECTOR */}
@@ -288,7 +314,12 @@ export default function WhyChooseUs() {
           transition={{
             duration: 0.6,
           }}
-          className="overflow-hidden rounded-3xl shadow-xl lg:col-span-2"
+          className="
+            overflow-hidden
+            rounded-3xl
+            shadow-xl
+            lg:col-span-2
+          "
         >
 
           <div
@@ -300,23 +331,39 @@ export default function WhyChooseUs() {
 
             <img
               src={directorVertical}
-              alt="Director de SOLFIE"
+              alt="Director y Socio Fundador de SOLFIE"
               draggable="false"
               onDragStart={(e) => e.preventDefault()}
               className="block h-auto w-full select-none"
             />
 
-            {/* MARCA DE AGUA */}
+            {/* MARCA DE AGUA INSTITUCIONAL */}
 
             <div
-              className="pointer-events-none absolute left-[12%] top-[35%] w-[120px] select-none opacity-[0.09]"
+              className="
+                pointer-events-none
+                absolute
+                left-[12%]
+                top-[35%]
+                z-10
+                w-[120px]
+                select-none
+                opacity-[0.06]
+              "
               aria-hidden="true"
             >
               <img
                 src={solfieLogo}
                 alt=""
                 draggable="false"
-                className="block h-auto w-full select-none"
+                className="
+                  block
+                  h-auto
+                  w-full
+                  select-none
+                  brightness-0
+                  invert
+                "
               />
             </div>
 
@@ -326,68 +373,168 @@ export default function WhyChooseUs() {
 
 
         {/* ============================= */}
-        {/* FILOSOFÍA */}
+        {/* MENSAJE DEL FUNDADOR */}
         {/* ============================= */}
 
-        <div className="grid gap-6 lg:col-span-3">
+        <motion.div
+          initial={{
+            opacity: 0,
+            x: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+          className="lg:col-span-3 lg:px-4"
+        >
 
-          {philosophy.map((item) => {
+          {/* ETIQUETA */}
 
-            const Icon = item.icon;
-
-            return (
-
-              <motion.div
-                key={item.title}
-                whileHover={{
-                  x: 5,
-                  y: -3,
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 250,
-                  damping: 18,
-                }}
-                className="rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:border-[#B3202D] hover:shadow-xl"
-              >
-
-                <div className="flex items-start gap-5">
-
-                  {/* ICONO */}
-
-                  <div className="shrink-0 rounded-2xl bg-red-50 p-4">
-
-                    <Icon
-                      size={30}
-                      className="text-[#B3202D]"
-                    />
-
-                  </div>
+          <span className="text-sm font-semibold uppercase tracking-[3px] text-[#B3202D]">
+            Mensaje del Socio Fundador
+          </span>
 
 
-                  {/* TEXTO */}
+          {/* TITULO */}
 
-                  <div>
+          <h3 className="mt-4 text-3xl font-bold leading-tight text-slate-900 lg:text-4xl">
+            Estrategias financieras con visión, experiencia y compromiso
+          </h3>
 
-                    <h3 className="text-2xl font-bold">
-                      {item.title}
-                    </h3>
 
-                    <p className="mt-3 leading-7 text-gray-600">
-                      {item.text}
-                    </p>
+          {/* FRASE DESTACADA */}
 
-                  </div>
+          <div className="relative mt-7 border-l-4 border-[#B3202D] pl-6">
+
+            <p className="text-lg font-medium leading-8 text-slate-700">
+              Detrás de cada estrategia financiera exitosa hay un compromiso
+              absoluto con la tranquilidad de nuestros clientes.
+            </p>
+
+          </div>
+
+
+          {/* MENSAJE */}
+
+          <p className="mt-6 leading-8 text-gray-600">
+            Como Socio Fundador de SOLFIE, mi objetivo ha sido consolidar una
+            firma contable en Querétaro donde los empresarios no solo
+            encuentren el cumplimiento estricto de sus obligaciones fiscales,
+            sino un aliado estratégico para proteger y hacer crecer su
+            patrimonio.
+          </p>
+
+
+          <p className="mt-5 leading-8 text-gray-600">
+            Con más de 20 años de experiencia en consultoría contable y fiscal,
+            diseñamos soluciones a la medida que transforman la complejidad de
+            los impuestos en certeza financiera para tu empresa.
+          </p>
+
+
+          {/* FIRMA / IDENTIDAD */}
+
+          <div className="mt-7">
+
+            <div className="h-1 w-20 rounded-full bg-[#B3202D]" />
+
+            <p className="mt-4 text-sm font-semibold uppercase tracking-[2px] text-slate-900">
+              Socio Fundador · SOLFIE
+            </p>
+
+          </div>
+
+        </motion.div>
+
+      </div>
+
+
+      {/* ============================= */}
+      {/* MISIÓN / VISIÓN / VALORES */}
+      {/* ============================= */}
+
+      <div className="mt-20 grid gap-6 lg:grid-cols-3">
+
+        {philosophy.map((item) => {
+
+          const Icon = item.icon;
+
+          return (
+
+            <motion.div
+              key={item.title}
+              whileHover={{
+                y: -5,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 250,
+                damping: 18,
+              }}
+              className="
+                rounded-3xl
+                border
+                border-gray-200
+                bg-white
+                p-7
+                transition-all
+                duration-300
+                hover:border-[#B3202D]
+                hover:shadow-xl
+              "
+            >
+
+              <div className="flex items-start gap-5">
+
+                {/* ICONO */}
+
+                <motion.div
+                  whileHover={{
+                    scale: 1.08,
+                    rotate: 5,
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 300,
+                  }}
+                  className="shrink-0 rounded-2xl bg-red-50 p-4"
+                >
+
+                  <Icon
+                    size={30}
+                    className="text-[#B3202D]"
+                  />
+
+                </motion.div>
+
+
+                {/* TEXTO */}
+
+                <div>
+
+                  <h3 className="text-2xl font-bold">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-3 leading-7 text-gray-600">
+                    {item.text}
+                  </p>
 
                 </div>
 
-              </motion.div>
+              </div>
 
-            );
+            </motion.div>
 
-          })}
+          );
 
-        </div>
+        })}
 
       </div>
 

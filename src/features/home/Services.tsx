@@ -16,41 +16,46 @@ const services = [
     description:
       "Mantenemos la claridad financiera de su negocio a través de nuestros servicios de contabilidad en general. Nuestro equipo reduce la fricción burocrática y administrativa, asegurando que su información financiera sea precisa y cumpla con las normativas vigentes. Esto le permite enfocarse con total seguridad en la operación y crecimiento de su empresa.",
     icon: Calculator,
+    cta: "Solicitar diagnóstico contable",
   },
   {
     title: "Estrategias Fiscales dentro del marco de la Ley",
     description:
       "Como especialistas en materia fiscal, ofrecemos una rigurosa planificación de impuestos individuales y para empresas. Navegamos las complejidades del panorama fiscal para diseñar estrategias que garantizan el cumplimiento normativo estricto, mientras optimizamos la salud financiera de su patrimonio dentro del marco legal.",
     icon: Landmark,
+    cta: "Optimizar mis impuestos hoy",
   },
   {
     title: "Derecho Corporativo",
     description:
       "Con nuestra especialización en materia corporativa, proveemos la estructura y el asesoramiento comercial necesarios para su éxito. Desde servicios integrales para iniciar una empresa hasta el mantenimiento normativo continuo, aseguramos que su entidad opere con total transparencia y rectitud en el mercado corporativo.",
     icon: Scale,
+    cta: "Proteger mi empresa",
   },
   {
     title: "Prevención de Lavado de Dinero (PLD)",
     description:
       "Destacamos por nuestra alta especialización en la prevención de lavado de dinero. Implementamos auditorías estratégicas y controles de cumplimiento para proteger a su organización frente a riesgos legales, brindándole la tranquilidad operativa que requieren los entornos de alto nivel regulatorio.",
     icon: ShieldCheck,
+    cta: "Evaluar mi cumplimiento",
   },
   {
     title: "Beneficiario Controlador (Fiscal y PLD)",
     description:
       "Apoyados en nuestra experiencia técnica sobre los marcos legales, le asistimos en el cumplimiento, identificación y resguardo de la información del beneficiario controlador. Reducimos la carga cognitiva asociada a esta compleja legislación, asegurando la integridad regulatoria y evitando contingencias legales para su empresa.",
     icon: BadgeDollarSign,
+    cta: "Revisar mi cumplimiento",
   },
   {
     title: "Nóminas y Seguridad Social",
     description:
       "Con sólido conocimiento en materia laboral, gestionamos de manera metódica la contabilidad de nóminas salariales. Garantizamos el cálculo exacto y el cumplimiento puntual de todas sus obligaciones obrero-patronales y de seguridad social, ofreciendo certeza jurídica tanto a la empresa como a sus colaboradores.",
     icon: Users,
+    cta: "Ordenar mi nómina",
   },
 ];
 
 export default function Services() {
-
   const handleKnowMore = (targetId: string) => {
     const el = document.getElementById(targetId);
 
@@ -63,7 +68,6 @@ export default function Services() {
 
   return (
     <Section>
-
       <div id="servicios">
 
         {/* HEADER */}
@@ -84,18 +88,28 @@ export default function Services() {
 
         </div>
 
-
         {/* GRID */}
         <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
           {services.map((service) => {
-
             const Icon = service.icon;
 
             return (
               <div
                 key={service.title}
-                className="group rounded-3xl border border-gray-200 bg-white p-8 transition-all duration-300 hover:-translate-y-2 hover:border-[#B3202D] hover:shadow-2xl"
+                className="
+                  group
+                  rounded-3xl
+                  border
+                  border-gray-200
+                  bg-white
+                  p-8
+                  transition-all
+                  duration-300
+                  hover:-translate-y-2
+                  hover:border-[#B3202D]
+                  hover:shadow-2xl
+                "
               >
 
                 {/* ICON */}
@@ -105,7 +119,6 @@ export default function Services() {
                     className="text-[#B3202D]"
                   />
                 </div>
-
 
                 {/* TITLE */}
                 <motion.h3
@@ -123,30 +136,46 @@ export default function Services() {
                   {service.title}
                 </motion.h3>
 
-
                 {/* DESCRIPTION */}
                 <p className="mt-4 leading-8 text-justify text-gray-600">
                   {service.description}
                 </p>
 
-
                 {/* BUTTON */}
                 <button
                   onClick={() => handleKnowMore("contacto")}
-                  className="mt-8 font-semibold text-[#B3202D] transition group-hover:translate-x-2"
+                  className="
+                    mt-8
+                    inline-flex
+                    items-center
+                    gap-2
+                    font-semibold
+                    text-[#B3202D]
+                    transition-all
+                    duration-300
+                    group-hover:translate-x-2
+                    hover:text-[#800000]
+                  "
                 >
-                  Conocer más →
+                  {service.cta}
+                  <span
+                    className="
+                      transition-transform
+                      duration-300
+                      group-hover:translate-x-1
+                    "
+                  >
+                    →
+                  </span>
                 </button>
 
               </div>
             );
-
           })}
 
         </div>
 
       </div>
-
     </Section>
   );
 }
