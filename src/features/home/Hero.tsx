@@ -8,7 +8,8 @@ import {
 } from "lucide-react";
 
 import Container from "../../components/common/Container";
-import di from "../../assets/images/nuevo_di.png";
+
+import director from "../../assets/images/IMG_0134.jpg";
 
 const containerVariants = {
   hidden: {},
@@ -39,7 +40,7 @@ export default function Hero() {
       id="inicio"
       className="relative overflow-hidden scroll-mt-24 bg-gradient-to-br from-slate-50 via-white to-red-50"
     >
-      {/* Background */}
+      {/* Background decorativo */}
       <motion.div
         animate={{
           scale: [1, 1.08, 1],
@@ -80,6 +81,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 rounded-full bg-red-50 px-3 py-1 text-[10px] font-semibold uppercase text-[#B3202D]"
             >
               <BadgeCheck size={14} />
+
               Despacho contable digital
             </motion.span>
 
@@ -98,6 +100,7 @@ export default function Hero() {
               que buscan crecer con orden y cumplimiento.
             </motion.p>
 
+            {/* BOTONES */}
             <motion.div
               variants={itemVariants}
               className="flex flex-wrap gap-3"
@@ -106,7 +109,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.96 }}
                 href="#contacto"
-                className="rounded-lg bg-[#B3202D] px-4 py-2 text-sm font-medium text-white transition"
+                className="rounded-lg bg-[#B3202D] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#8f1823]"
               >
                 Agenda tu cita
               </motion.a>
@@ -121,61 +124,81 @@ export default function Hero() {
               </motion.a>
             </motion.div>
 
+            {/* ESTADÍSTICAS */}
             <motion.div
               variants={itemVariants}
               className="grid grid-cols-2 gap-2 sm:grid-cols-4"
             >
               <Stat title="+10" text="Años experiencia" />
+
               <Stat title="200+" text="Empresas atendidas" />
+
               <Stat title="2500+" text="Declaraciones" />
+
               <Stat title="100%" text="Cumplimiento fiscal" />
             </motion.div>
 
+            {/* BADGES */}
             <motion.div
               variants={itemVariants}
               className="flex flex-wrap gap-1"
             >
               <Badge icon={<Landmark size={10} />} text="SAT" />
+
               <Badge icon={<Building2 size={10} />} text="Hacienda" />
+
               <Badge icon={<FileCheck2 size={10} />} text="IMSS" />
+
               <Badge icon={<Calculator size={10} />} text="Fiscal" />
             </motion.div>
           </motion.div>
 
-          {/* RIGHT */}
+          {/* RIGHT - FOTOGRAFÍA */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{
               opacity: 1,
               x: 0,
-              y: [0, -10, 0],
+              y: [0, -8, 0],
             }}
             transition={{
-              opacity: { duration: 0.5 },
-              x: { duration: 0.5 },
+              opacity: {
+                duration: 0.5,
+              },
+              x: {
+                duration: 0.5,
+              },
               y: {
                 duration: 5,
                 repeat: Infinity,
                 ease: "easeInOut",
               },
             }}
-            className="relative flex justify-center overflow-hidden"
+            className="relative flex justify-center"
           >
-            <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-              <div className="h-60 w-60 rounded-full bg-[#B3202D]/10 blur-3xl" />
+            {/* Halo */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="h-72 w-72 rounded-full bg-[#B3202D]/10 blur-3xl" />
             </div>
 
-            <img
-              src={di}
-              className="relative w-[260px] drop-shadow-2xl sm:w-[330px] lg:w-[430px] xl:w-[470px]"
-              alt="Asesora contable"
-            />
+            {/* Imagen */}
+            <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+              <img
+                src={director}
+                className="h-[360px] w-[280px] object-cover object-center sm:h-[430px] sm:w-[340px] lg:h-[500px] lg:w-[410px] xl:h-[530px] xl:w-[430px]"
+                alt="Director de SOLFIE"
+              />
+
+              {/* Línea decorativa */}
+              <div className="absolute bottom-0 left-0 right-0 h-2 bg-[#B3202D]" />
+            </div>
           </motion.div>
         </div>
       </Container>
     </section>
   );
 }
+
 function Stat({
   title,
   text,
@@ -193,7 +216,9 @@ function Stat({
         opacity: 1,
         y: 0,
       }}
-      viewport={{ once: true }}
+      viewport={{
+        once: true,
+      }}
       whileHover={{
         y: -5,
         scale: 1.05,
@@ -205,8 +230,12 @@ function Stat({
       className="rounded-lg border border-slate-200 bg-white px-2 py-1.5 text-center shadow-sm"
     >
       <motion.p
-        initial={{ scale: 0.8 }}
-        whileInView={{ scale: 1 }}
+        initial={{
+          scale: 0.8,
+        }}
+        whileInView={{
+          scale: 1,
+        }}
         transition={{
           delay: 0.2,
           type: "spring",
@@ -241,7 +270,9 @@ function Badge({
         opacity: 1,
         scale: 1,
       }}
-      viewport={{ once: true }}
+      viewport={{
+        once: true,
+      }}
       whileHover={{
         y: -2,
         scale: 1.08,
