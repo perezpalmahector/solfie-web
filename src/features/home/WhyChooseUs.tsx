@@ -17,114 +17,140 @@ import solfieLogo from "../../assets/images/logo.png";
 
 const items = [
   {
-    title: "Experiencia",
-    text: "Más de una década apoyando empresas de diferentes sectores.",
     icon: ShieldCheck,
+    title: "Experiencia",
+    description:
+      "Más de una década apoyando empresas de diferentes sectores.",
   },
   {
-    title: "Tecnología",
-    text: "Herramientas digitales para agilizar procesos contables.",
     icon: Laptop,
+    title: "Tecnología",
+    description:
+      "Herramientas digitales para agilizar procesos contables.",
   },
   {
-    title: "Planeación",
-    text: "Estrategias financieras enfocadas en el crecimiento.",
     icon: TrendingUp,
+    title: "Planeación",
+    description:
+      "Estrategias financieras enfocadas en el crecimiento.",
   },
   {
-    title: "Acompañamiento",
-    text: "Atención personalizada durante todo el año.",
     icon: Users,
+    title: "Acompañamiento",
+    description:
+      "Atención personalizada durante todo el año.",
   },
 ];
 
 const philosophy = [
   {
-    title: "Misión",
-    text: "Brindar soluciones contables, fiscales y financieras que impulsen el crecimiento y cumplimiento de nuestros clientes.",
     icon: Target,
+    title: "Misión",
+    description:
+      "Brindar soluciones contables, fiscales y financieras que impulsen el crecimiento y cumplimiento de nuestros clientes.",
   },
   {
-    title: "Visión",
-    text: "Ser un despacho contable líder a nivel nacional, reconocido por su innovación, confianza y excelencia en el servicio.",
     icon: Eye,
+    title: "Visión",
+    description:
+      "Ser un despacho contable líder a nivel nacional, reconocido por su innovación, confianza y excelencia en el servicio.",
   },
   {
-    title: "Valores",
-    text: "Integridad, responsabilidad, transparencia, compromiso y orientación al cliente.",
     icon: HeartHandshake,
+    title: "Valores",
+    description:
+      "Integridad, responsabilidad, transparencia, compromiso y orientación al cliente.",
   },
 ];
 
 export default function WhyChooseUs() {
   return (
     <Section id="nosotros">
-
-      {/* ============================= */}
-      {/* HEADER */}
-      {/* ============================= */}
-
+      {/* ENCABEZADO */}
       <div className="mx-auto max-w-3xl text-center">
-
-        <span className="rounded-full bg-red-50 px-4 py-2 text-sm font-semibold uppercase tracking-[4px] text-[#B3202D]">
+        <motion.span
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="
+            mb-3
+            inline-block
+            text-sm
+            font-semibold
+            uppercase
+            tracking-[0.2em]
+            text-[#B3202D]
+          "
+        >
           Nosotros
-        </span>
+        </motion.span>
 
-        <h2 className="mt-6 text-4xl font-bold lg:text-5xl">
-          ¿Por qué elegir SOLFIE?
-        </h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="
+            text-3xl
+            font-bold
+            tracking-tight
+            text-slate-900
+            sm:text-4xl
+            lg:text-5xl
+          "
+        >
+          Experiencia que se transforma en
+          <span className="text-[#B3202D]"> confianza</span>
+        </motion.h2>
 
-        <p className="mt-6 text-lg text-gray-600">
-          Combinamos experiencia, conocimiento fiscal y tecnología para
-          ofrecer un servicio cercano y de alta calidad.
-        </p>
-
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-5 text-base leading-7 text-slate-600 sm:text-lg"
+        >
+          En SOLFIE combinamos experiencia, tecnología y estrategia para
+          brindar soluciones contables y fiscales que acompañen el crecimiento
+          de cada empresa.
+        </motion.p>
       </div>
 
-
-      {/* ============================= */}
-      {/* FOTO INSTITUCIONAL */}
-      {/* ============================= */}
-
-      <div className="mt-14 grid items-center gap-10 lg:grid-cols-2">
-
-        {/* FOTO IMG_0114 */}
-
+      {/* EXPERIENCIA */}
+      <div className="mt-16 grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+        {/* FOTO */}
         <motion.div
-          initial={{
-            opacity: 0,
-            x: -30,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.6,
-          }}
-          className="overflow-hidden rounded-3xl shadow-xl"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="relative"
         >
-
           <div
-            className="relative w-full overflow-hidden"
+            className="
+              relative
+              overflow-hidden
+              rounded-2xl
+              shadow-xl
+            "
             onContextMenu={(e) => e.preventDefault()}
           >
-
             {/* FOTO ORIGINAL */}
-
             <img
               src={equipo}
-              alt="Equipo de SOLFIE durante una reunión"
+              alt="Equipo profesional de SOLFIE"
               draggable="false"
               onDragStart={(e) => e.preventDefault()}
-              className="block h-auto w-full select-none"
+              className="
+                block
+                h-auto
+                w-full
+                select-none
+              "
             />
 
-            {/* MARCA DE AGUA INSTITUCIONAL */}
-
+            {/* MARCA DE AGUA SOLFIE */}
             <div
               className="
                 pointer-events-none
@@ -134,7 +160,7 @@ export default function WhyChooseUs() {
                 z-10
                 w-[120px]
                 select-none
-                opacity-[0.06]
+                opacity-[0.09]
               "
               aria-hidden="true"
             >
@@ -147,397 +173,361 @@ export default function WhyChooseUs() {
                   h-auto
                   w-full
                   select-none
-                  brightness-0
-                  invert
                 "
               />
             </div>
-
           </div>
-
         </motion.div>
-
 
         {/* TEXTO */}
-
         <motion.div
-          initial={{
-            opacity: 0,
-            x: 30,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.6,
-          }}
-          className="lg:px-6"
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
         >
-
-          <span className="text-sm font-semibold uppercase tracking-[3px] text-[#B3202D]">
-            Experiencia que respalda
+          <span
+            className="
+              text-sm
+              font-semibold
+              uppercase
+              tracking-[0.18em]
+              text-[#B3202D]
+            "
+          >
+            Más de 20 años de experiencia
           </span>
 
-          <h3 className="mt-4 text-3xl font-bold text-slate-900">
-            Un equipo que entiende las necesidades de tu empresa
+          <h3
+            className="
+              mt-3
+              text-3xl
+              font-bold
+              leading-tight
+              text-slate-900
+              sm:text-4xl
+            "
+          >
+            Un aliado estratégico para tu empresa
           </h3>
 
-          <p className="mt-5 leading-8 text-gray-600">
-            En SOLFIE combinamos experiencia contable, conocimiento fiscal
-            y atención personalizada para acompañar a nuestros clientes
-            en cada etapa de su crecimiento.
+          <p className="mt-6 text-base leading-8 text-slate-600">
+            En SOLFIE entendemos que detrás de cada empresa existen decisiones,
+            proyectos y personas que necesitan certeza financiera.
           </p>
 
-          <div className="mt-6 h-1 w-20 rounded-full bg-[#B3202D]" />
+          <p className="mt-4 text-base leading-8 text-slate-600">
+            Nuestro trabajo va más allá del cumplimiento contable y fiscal.
+            Buscamos convertir la información financiera en una herramienta
+            para tomar mejores decisiones y construir empresas más sólidas.
+          </p>
 
+          <div className="mt-8 h-px w-20 bg-[#B3202D]" />
         </motion.div>
-
       </div>
 
-
-      {/* ============================= */}
-      {/* PRINCIPALES */}
-      {/* ============================= */}
-
-      <div className="mt-16 grid gap-8 md:grid-cols-2">
-
-        {items.map((item) => {
-
+      {/* PRINCIPALES FORTALEZAS */}
+      <div className="mt-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {items.map((item, index) => {
           const Icon = item.icon;
 
           return (
-
             <motion.div
               key={item.title}
-              whileHover={{
-                y: -10,
-                scale: 1.02,
-              }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{
-                type: "spring",
-                stiffness: 260,
-                damping: 18,
+                duration: 0.5,
+                delay: index * 0.1,
               }}
               className="
                 group
-                rounded-3xl
+                rounded-2xl
                 border
-                border-gray-200
-                bg-white
-                p-8
-                transition-all
-                duration-300
-                hover:border-[#800000]
-                hover:shadow-2xl
-              "
-            >
-
-              {/* ICONO */}
-
-              <motion.div
-                whileHover={{
-                  rotate: 8,
-                  scale: 1.12,
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 300,
-                }}
-                className="mb-6 inline-flex rounded-2xl bg-red-50 p-4"
-              >
-
-                <Icon
-                  size={34}
-                  className="text-[#B3202D]"
-                />
-
-              </motion.div>
-
-
-              {/* TITULO */}
-
-              <motion.h3
-                whileHover={{
-                  color: "#800000",
-                  x: 6,
-                }}
-                transition={{
-                  duration: 0.25,
-                }}
-                className="text-2xl font-bold"
-              >
-                {item.title}
-              </motion.h3>
-
-
-              {/* TEXTO */}
-
-              <p className="mt-4 leading-8 text-gray-600">
-                {item.text}
-              </p>
-
-            </motion.div>
-
-          );
-
-        })}
-
-      </div>
-
-
-      {/* ============================= */}
-      {/* MENSAJE DEL SOCIO FUNDADOR */}
-      {/* ============================= */}
-
-      <div className="mt-20 grid items-center gap-10 lg:grid-cols-5">
-
-        {/* ============================= */}
-        {/* FOTO DEL DIRECTOR */}
-        {/* ============================= */}
-
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 30,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.6,
-          }}
-          className="
-            overflow-hidden
-            rounded-3xl
-            shadow-xl
-            lg:col-span-2
-          "
-        >
-
-          <div
-            className="relative w-full overflow-hidden"
-            onContextMenu={(e) => e.preventDefault()}
-          >
-
-            {/* FOTO ORIGINAL */}
-
-            <img
-              src={directorVertical}
-              alt="Director y Socio Fundador de SOLFIE"
-              draggable="false"
-              onDragStart={(e) => e.preventDefault()}
-              className="block h-auto w-full select-none"
-            />
-
-            {/* MARCA DE AGUA INSTITUCIONAL */}
-
-            <div
-              className="
-                pointer-events-none
-                absolute
-                left-[12%]
-                top-[35%]
-                z-10
-                w-[120px]
-                select-none
-                opacity-[0.06]
-              "
-              aria-hidden="true"
-            >
-              <img
-                src={solfieLogo}
-                alt=""
-                draggable="false"
-                className="
-                  block
-                  h-auto
-                  w-full
-                  select-none
-                  brightness-0
-                  invert
-                "
-              />
-            </div>
-
-          </div>
-
-        </motion.div>
-
-
-        {/* ============================= */}
-        {/* MENSAJE DEL FUNDADOR */}
-        {/* ============================= */}
-
-        <motion.div
-          initial={{
-            opacity: 0,
-            x: 30,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.7,
-          }}
-          className="lg:col-span-3 lg:px-4"
-        >
-
-          {/* ETIQUETA */}
-
-          <span className="text-sm font-semibold uppercase tracking-[3px] text-[#B3202D]">
-            Mensaje del Socio Fundador
-          </span>
-
-
-          {/* TITULO */}
-
-          <h3 className="mt-4 text-3xl font-bold leading-tight text-slate-900 lg:text-4xl">
-            Estrategias financieras con visión, experiencia y compromiso
-          </h3>
-
-
-          {/* FRASE DESTACADA */}
-
-          <div className="relative mt-7 border-l-4 border-[#B3202D] pl-6">
-
-            <p className="text-lg font-medium leading-8 text-slate-700">
-              Detrás de cada estrategia financiera exitosa hay un compromiso
-              absoluto con la tranquilidad de nuestros clientes.
-            </p>
-
-          </div>
-
-
-          {/* MENSAJE */}
-
-          <p className="mt-6 leading-8 text-gray-600">
-            Como Socio Fundador de SOLFIE, mi objetivo ha sido consolidar una
-            firma contable en Querétaro donde los empresarios no solo
-            encuentren el cumplimiento estricto de sus obligaciones fiscales,
-            sino un aliado estratégico para proteger y hacer crecer su
-            patrimonio.
-          </p>
-
-
-          <p className="mt-5 leading-8 text-gray-600">
-            Con más de 20 años de experiencia en consultoría contable y fiscal,
-            diseñamos soluciones a la medida que transforman la complejidad de
-            los impuestos en certeza financiera para tu empresa.
-          </p>
-
-
-          {/* FIRMA / IDENTIDAD */}
-
-          <div className="mt-7">
-
-            <div className="h-1 w-20 rounded-full bg-[#B3202D]" />
-
-            <p className="mt-4 text-sm font-semibold uppercase tracking-[2px] text-slate-900">
-              Socio Fundador · SOLFIE
-            </p>
-
-          </div>
-
-        </motion.div>
-
-      </div>
-
-
-      {/* ============================= */}
-      {/* MISIÓN / VISIÓN / VALORES */}
-      {/* ============================= */}
-
-      <div className="mt-20 grid gap-6 lg:grid-cols-3">
-
-        {philosophy.map((item) => {
-
-          const Icon = item.icon;
-
-          return (
-
-            <motion.div
-              key={item.title}
-              whileHover={{
-                y: -5,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 250,
-                damping: 18,
-              }}
-              className="
-                rounded-3xl
-                border
-                border-gray-200
+                border-slate-200
                 bg-white
                 p-7
+                shadow-sm
                 transition-all
                 duration-300
-                hover:border-[#B3202D]
+                hover:-translate-y-2
+                hover:border-[#B3202D]/20
                 hover:shadow-xl
               "
             >
-
-              <div className="flex items-start gap-5">
-
-                {/* ICONO */}
-
-                <motion.div
-                  whileHover={{
-                    scale: 1.08,
-                    rotate: 5,
-                  }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 300,
-                  }}
-                  className="shrink-0 rounded-2xl bg-red-50 p-4"
-                >
-
-                  <Icon
-                    size={30}
-                    className="text-[#B3202D]"
-                  />
-
-                </motion.div>
-
-
-                {/* TEXTO */}
-
-                <div>
-
-                  <h3 className="text-2xl font-bold">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-3 leading-7 text-gray-600">
-                    {item.text}
-                  </p>
-
-                </div>
-
+              <div
+                className="
+                  flex
+                  h-12
+                  w-12
+                  items-center
+                  justify-center
+                  rounded-xl
+                  bg-[#B3202D]/10
+                  text-[#B3202D]
+                  transition-all
+                  duration-300
+                  group-hover:bg-[#B3202D]
+                  group-hover:text-white
+                "
+              >
+                <Icon size={24} />
               </div>
 
+              <h4 className="mt-6 text-xl font-bold text-slate-900">
+                {item.title}
+              </h4>
+
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                {item.description}
+              </p>
             </motion.div>
-
           );
-
         })}
-
       </div>
 
+      {/* MENSAJE DEL SOCIO FUNDADOR */}
+      <div className="mt-24">
+        <div
+          className="
+            overflow-hidden
+            rounded-3xl
+            border
+            border-slate-200
+            bg-slate-950
+            shadow-2xl
+          "
+        >
+          <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
+            {/* FOTO VERTICAL */}
+            <motion.div
+              initial={{ opacity: 0, scale: 1.03 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative min-h-[480px] overflow-hidden"
+              onContextMenu={(e) => e.preventDefault()}
+            >
+              {/* FOTO ORIGINAL */}
+              <img
+                src={directorVertical}
+                alt="Socio Fundador de SOLFIE"
+                draggable="false"
+                onDragStart={(e) => e.preventDefault()}
+                className="
+                  absolute
+                  inset-0
+                  h-full
+                  w-full
+                  select-none
+                  object-cover
+                "
+              />
+
+              {/* MARCA DE AGUA SOLFIE */}
+              <div
+                className="
+                  pointer-events-none
+                  absolute
+                  left-[12%]
+                  top-[35%]
+                  z-10
+                  w-[120px]
+                  select-none
+                  opacity-[0.09]
+                "
+                aria-hidden="true"
+              >
+                <img
+                  src={solfieLogo}
+                  alt=""
+                  draggable="false"
+                  className="
+                    block
+                    h-auto
+                    w-full
+                    select-none
+                  "
+                />
+              </div>
+
+              {/* DEGRADADO */}
+              <div
+                className="
+                  pointer-events-none
+                  absolute
+                  inset-0
+                  bg-gradient-to-t
+                  from-slate-950/70
+                  via-transparent
+                  to-transparent
+                "
+              />
+            </motion.div>
+
+            {/* MENSAJE */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              className="
+                flex
+                flex-col
+                justify-center
+                p-8
+                sm:p-10
+                lg:p-14
+              "
+            >
+              <span
+                className="
+                  text-sm
+                  font-semibold
+                  uppercase
+                  tracking-[0.18em]
+                  text-[#D85A65]
+                "
+              >
+                Mensaje del Socio Fundador
+              </span>
+
+              <h3
+                className="
+                  mt-4
+                  text-3xl
+                  font-bold
+                  leading-tight
+                  text-white
+                  sm:text-4xl
+                "
+              >
+                Estrategias financieras con visión,
+                <span className="text-[#D85A65]">
+                  {" "}
+                  experiencia y compromiso
+                </span>
+              </h3>
+
+              <div className="mt-7 border-l-2 border-[#B3202D] pl-5">
+                <p className="text-lg font-medium leading-8 text-slate-200">
+                  Detrás de cada estrategia financiera exitosa hay un
+                  compromiso absoluto con la tranquilidad de nuestros clientes.
+                </p>
+              </div>
+
+              <p className="mt-7 text-base leading-8 text-slate-300">
+                Como Socio Fundador de SOLFIE, mi objetivo ha sido consolidar
+                una firma contable en Querétaro donde los empresarios no solo
+                encuentren el cumplimiento estricto de sus obligaciones
+                fiscales, sino un aliado estratégico para proteger y hacer
+                crecer su patrimonio.
+              </p>
+
+              <p className="mt-4 text-base leading-8 text-slate-300">
+                Con más de 20 años de experiencia en consultoría contable y
+                fiscal, diseñamos soluciones a la medida que transforman la
+                complejidad de los impuestos en certeza financiera para tu
+                empresa.
+              </p>
+
+              <div className="mt-8">
+                <div className="h-px w-16 bg-[#B3202D]" />
+
+                <p className="mt-4 text-sm font-semibold uppercase tracking-[0.16em] text-white">
+                  Socio Fundador · SOLFIE
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* MISIÓN, VISIÓN Y VALORES */}
+      <div className="mt-24">
+        <div className="mx-auto max-w-2xl text-center">
+          <span
+            className="
+              text-sm
+              font-semibold
+              uppercase
+              tracking-[0.2em]
+              text-[#B3202D]
+            "
+          >
+            Nuestra filosofía
+          </span>
+
+          <h3
+            className="
+              mt-3
+              text-3xl
+              font-bold
+              text-slate-900
+              sm:text-4xl
+            "
+          >
+            Principios que guían nuestro trabajo
+          </h3>
+        </div>
+
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {philosophy.map((item, index) => {
+            const Icon = item.icon;
+
+            return (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1,
+                }}
+                className="
+                  rounded-2xl
+                  border
+                  border-slate-200
+                  bg-white
+                  p-8
+                  text-center
+                  shadow-sm
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:shadow-lg
+                "
+              >
+                <div
+                  className="
+                    mx-auto
+                    flex
+                    h-14
+                    w-14
+                    items-center
+                    justify-center
+                    rounded-full
+                    bg-[#B3202D]/10
+                    text-[#B3202D]
+                  "
+                >
+                  <Icon size={27} />
+                </div>
+
+                <h4 className="mt-6 text-xl font-bold text-slate-900">
+                  {item.title}
+                </h4>
+
+                <p className="mt-4 text-sm leading-7 text-slate-600">
+                  {item.description}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
     </Section>
   );
 }
